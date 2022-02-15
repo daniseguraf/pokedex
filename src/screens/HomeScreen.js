@@ -7,7 +7,7 @@ import { Container } from 'react-bootstrap';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import Search from '../components/Search';
-import Filters from './../components/Filters';
+import Filters from '../components/Filters';
 import Pokedex from '../components/Pokedex';
 import PokemonCard from '../components/PokemonCard';
 

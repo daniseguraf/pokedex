@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// import { PokemonItemSuccess } from './../actions/pokemonActionsTypes';
 import { addToFavorite, removeFromFavorite } from '../actions/favoriteActions';
 
 import { Link } from 'react-router-dom';
 import BtnFavorite from './BtnFavorite';
 
-const PokemonCard = ({ id, sprites, name, order, types }) => {
+const PokemonCard = ({ id, name, sprites, types }) => {
   const [isFavorite, setIsFavorite] = useState(null);
 
   const dispatch = useDispatch();

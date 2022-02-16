@@ -1,3 +1,8 @@
+import { Dispatch } from 'redux';
+import {
+  PokemonItemDispatchTypes,
+  PokemonListDispatchTypes,
+} from './pokemonActionsTypes';
 import axios from 'axios';
 import {
   POKEMON_LIST_REQUEST,
@@ -12,7 +17,7 @@ import {
 } from '../constants/pokemonConstants';
 
 const getPokemons = (limit = 20, offset = 0) => {
-  return async (dispatch) => {
+  return async (dispatch: Dispatch<PokemonListDispatchTypes>) => {
     try {
       dispatch({ type: POKEMON_LIST_REQUEST });
 
@@ -61,8 +66,8 @@ const getPokemonDetail = (id) => {
   };
 };
 
-const getPokemonByName = (name) => {
-  return async (dispatch) => {
+const getPokemonByName = (name: string) => {
+  return async (dispatch: Dispatch<PokemonItemDispatchTypes>) => {
     try {
       dispatch({ type: POKEMON_ITEM_REQUEST });
 

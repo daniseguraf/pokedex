@@ -4,7 +4,7 @@ import {
   FAVORITE_REMOVE_ITEM,
 } from '../constants/favoriteConstants';
 
-export const addToFavorite = (id) => {
+export const addToFavorite = (id: number) => {
   return async (dispatch, getState) => {
     try {
       const { data } = await axios.get(

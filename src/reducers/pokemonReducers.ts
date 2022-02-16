@@ -1,4 +1,9 @@
 import {
+  PokemonItemType,
+  PokemonItemDispatchTypes,
+} from './../actions/pokemonActionsTypes';
+
+import {
   POKEMON_LIST_REQUEST,
   POKEMON_LIST_SUCCESS,
   POKEMON_LIST_FAIL,
@@ -44,7 +49,15 @@ export const getPokemonDetailReducer = (state = { pokemon: {} }, action) => {
   return state;
 };
 
-export const getPokemonByName = (state = { pokemon: {} }, action) => {
+interface DefaultStateI {
+  loading?: boolean;
+  pokemon: PokemonItemType | {};
+}
+
+export const getPokemonByName = (
+  state: DefaultStateI = { pokemon: {} },
+  action: PokemonItemDispatchTypes
+): DefaultStateI => {
   if (action.type === POKEMON_ITEM_REQUEST) {
     return { loading: true, ...state };
   }

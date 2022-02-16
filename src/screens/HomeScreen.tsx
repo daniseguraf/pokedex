@@ -11,11 +11,17 @@ import Filters from '../components/Filters';
 import Pokedex from '../components/Pokedex';
 import PokemonCard from '../components/PokemonCard';
 
+interface Aaa {
+  loading: boolean;
+  error: string;
+  pokemons: [];
+}
+
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
 
   const dispatch = useDispatch();
-  const pokemonList = useSelector((state) => state.pokemonList);
+  const pokemonList = useSelector((state: Aaa) => state.pokemonList);
   const pokemonSearch = useSelector((state) => state.pokemonSearch);
 
   const { loading, error, pokemons } = pokemonList;

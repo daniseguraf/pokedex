@@ -18,7 +18,7 @@ const reducer = combineReducers({
 });
 
 const favoriteItemsFromStorage = localStorage.getItem('favoriteItems')
-  ? JSON.parse(localStorage.getItem('favoriteItems'))
+  ? JSON.parse(localStorage.getItem('favoriteItems') || '')
   : [];
 
 const initialState = {
